@@ -1,0 +1,13 @@
+
+
+- The primary dealer that was working the times the losses occurred.¬
+The primary dealer that was working the times lossed accurred:
+
+Billy Jones
+
+
+- How many times the dealer worked when major losses occurred.
+
+ He worked 15 days 
+$ cat Dealers_working_during_losses  | grep Jones | wc -l
+      15

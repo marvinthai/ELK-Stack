@@ -1,0 +1,26 @@
+---
+- name: Install Filebeat to DVWA
+  hosts: webservers
+  become: true
+  tasks:
+  - name: Download Deb package
+    command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deb
+
+  - name: Install filebeat
+    command: dpkg -i filebeat-7.6.1-amd64.deb
+
+  - name: Drop in the filebeat.ym
+    copy:
+      src: /etc/ansible/file/filebeat-configuration.yml
+      #src: ../file/filebeat-configuration.yml
+      dest: /etc/filebeat/filebeat.yml
+
+  - name: enable & configure system module
+    command: filebeat modules enable system
+
+  - name: setup filebeat
+    command: filebeat setup
+
+  - name: start filebeat service
+    command: systemctl start filebeat
+

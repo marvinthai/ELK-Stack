@@ -1,0 +1,82 @@
+* Mumber of loss times each days:
+
+
+- The Times the losses occurred on each day.
+- If there is a certain player that was playing during each of those times.
+- Total count of times this player was playing.
+
+- The Times the losses occurred on each day.
+
+The Times are:
+
+$ cat Roulette_Losses.date |  awk '{print $1, $2}'
+0310_win_loss_player_data:05:00:00 AM
+0310_win_loss_player_data:08:00:00 AM
+0310_win_loss_player_data:02:00:00 PM
+0310_win_loss_player_data:08:00:00 PM
+0310_win_loss_player_data:11:00:00 PM
+
+0312_win_loss_player_data:05:00:00 AM
+0312_win_loss_player_data:08:00:00 AM
+0312_win_loss_player_data:02:00:00 PM
+0312_win_loss_player_data:08:00:00 PM
+0312_win_loss_player_data:11:00:00 PM
+
+0315_win_loss_player_data:05:00:00 AM
+0315_win_loss_player_data:08:00:00 AM
+0315_win_loss_player_data:02:00:00 PM
+
+- If there is a certain player that was playing during each of those times.
+
+Player Mylie Schmidt was playing during each of those times:
+
+$ cat Roulette_Losses.date  | grep -i schmidt
+0310_win_loss_player_data:05:00:00 AM	-$82,348	Amirah Schneider,Nola Portillo, Mylie Schmidt,Suhayb Maguire,Millicent Betts,Avi Graves
+0310_win_loss_player_data:08:00:00 AM	-$97,383	Chanelle Tapia, Shelley Dodson , Valentino Smith, Mylie Schmidt
+0310_win_loss_player_data:02:00:00 PM	-$82,348	Jaden Clarkson, Kaidan Sheridan, Mylie Schmidt
+0310_win_loss_player_data:08:00:00 PM	-$65,348        Mylie Schmidt, Trixie Velasquez, Jerome Klein ,Rahma Buckley
+0310_win_loss_player_data:11:00:00 PM	-$88,383	Mcfadden Wasim, Norman Cooper, Mylie Schmidt
+0312_win_loss_player_data:05:00:00 AM	-$182,300	Montana Kirk, Alysia Goodman, Halima Little, Etienne Brady, Mylie Schmidt
+0312_win_loss_player_data:08:00:00 AM	-$97,383        Rimsha Gardiner,Fern Cleveland, Mylie Schmidt,Kobe Higgins
+0312_win_loss_player_data:02:00:00 PM	-$82,348        Mae Hail,  Mylie Schmidt,Ayden Beil
+0312_win_loss_player_data:08:00:00 PM	-$65,792        Tallulah Rawlings,Josie Dawe, Mylie Schmidt,Hakim Stott, Esther Callaghan, Ciaron Villanueva
+0312_win_loss_player_data:11:00:00 PM	-$88,229        Vlad Hatfield,Kerys Frazier,Mya Butler, Mylie Schmidt,Lex Oakley,Elin Wormald
+0315_win_loss_player_data:05:00:00 AM	-$82,844        Arjan Guzman,Sommer Mann, Mylie Schmidt
+0315_win_loss_player_data:08:00:00 AM	-$97,001        Lilianna Devlin,Brendan Lester, Mylie Schmidt,Blade Robertson,Derrick Schroeder
+0315_win_loss_player_data:02:00:00 PM	-$182,419        Mylie Schmidt, Corey Huffman
+
+- Total count of times this player was playing.
+
+Schmidt played 13 times out of 13 times in log.
+
+$ cat Roulette_Losses.date  | grep -i schmidt | wc -l
+      13
+$ cat Roulette_Losses.date  | wc -l
+      13
+
+
+
+- The primary dealer that was working the times the losses occurred.¬
+The primary dealer that was working the times lossed accurred:
+
+Billy Jones
+
+
+- How many times the dealer worked when major losses occurred.
+
+ He worked 15 days 
+$ cat Dealers_working_during_losses  | grep Jones | wc -l
+      15
+
+
+Answer:
+- A summary of your findings for each step.
+* Player Mylie Schmidt has been playing on all three loss days and at times when dealer Bill Jones were working.
+* Dealer Bill Jones were working on those days and time when Schimdt was playing.
+* Of 15 days that Jones worked, Schmidt was playing at the same times and days Jones was the dealer at the Roulette tables.
+* There were other players on these loss days too but the were just lucky and each only won one vs Schmidt who won 13 times.
+ 
+- A conclusion of your findings to provide to the authorities.
+* Evidents shows that Player Schmidt colaborated dealer Jones to win 13 times at the Roulette tables during March 10th, 12th, and 15th and only during the times Jones is working at the Roulette tables.
+
+
